@@ -1,0 +1,26 @@
+# ignore everything 
+/*
+/*/
+
+
+# ... but these: 
+!/README.md
+!/.gitignore
+
+!astronvim
+
+!ranger
+ranger/plugins/
+
+!zsh
+zsh/*.zwc
+
+!tmux
+
+!kitty
+
+!linux_plug
+
+!rofi
+
+!alacritty
