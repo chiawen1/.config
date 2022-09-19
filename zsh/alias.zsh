@@ -16,8 +16,9 @@ alias hotspot='nmcli device wifi > /dev/null; nmcli device wifi connect "Redmi N
 #alias campus='nmcli device wifi > /dev/null; nmcli device wifi connect csust-lt'
 
 # OpenVPN
-alias vpnconnect='openvpn3 session-start --config /etc/openvpn/client/openv.ovpn'
-alias vpndisconnect='openvpn3 session-manage --disconnect --config /etc/openvpn/client/openv.ovpn'
+alias vpnconnect='openvpn3 session-start --config $HOME/.config/zsh/vpn/rack.ovpn'
+alias vpndisconnect='openvpn3 session-manage --disconnect --config $HOME/.config/zsh/vpn/rack.ovpn'
+alias vpnrestart='openvpn3 session-manage --restart --config $HOME/.config/zsh/vpn/rack.ovpn'
 alias vpnlist='openvpn3 sessions-list'
 
 # anaconda

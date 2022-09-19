@@ -7,10 +7,10 @@ return {
   { "sainnhe/sonokai" },
   { "sainnhe/edge" },
 
-  { 'luk400/vim-jukit' },
-  { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' },
+  --{ 'luk400/vim-jukit' },
+  --{ 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' },
 
-  { "hkupty/iron.nvim" },
-  { 'metakirby5/codi.vim' },
-  { 'michaelb/sniprun', run = 'bash ./install.sh'},
+  --{ "hkupty/iron.nvim" },
+  --{ 'metakirby5/codi.vim' },
+  --{ 'michaelb/sniprun', run = 'bash ./install.sh'},
 }
