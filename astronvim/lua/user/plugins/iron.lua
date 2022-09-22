@@ -11,11 +11,13 @@ iron.setup({
         format = require("iron.fts.common").bracketed_paste,
       },
     },
-    repl_open_cmd = view.split.vertical.botright(0.4),
+    --repl_open_cmd = view.split.vertical.botright(0.4),
+    repl_open_cmd = view.split("40%")
   },
   keymaps = {
     send_motion = "<space>sc",
-    visual_send = "<space>sc",
+    --visual_send = "<space>sc",
+    visual_send = "<enter>",
     send_file = "<space>sf",
     send_line = "<space>sl",
     send_mark = "<space>sm",

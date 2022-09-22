@@ -9,5 +9,3 @@ vim.cmd [[
  "highlight PmenuSel gui=bold guibg=#83A598 guifg=#504945
 ]]
 
---require("user.plugins.iron")
---require("user.plugins.vim-jukit")

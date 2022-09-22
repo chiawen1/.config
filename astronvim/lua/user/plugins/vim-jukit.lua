@@ -1,4 +1,5 @@
 vim.cmd [[
+    let g:jukit_terminal = 'kitty'
     let g:jukit_layout = {
         \'split': 'horizontal',
         \'p1': 0.6, 

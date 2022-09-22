@@ -24,3 +24,5 @@ zsh/scripts/
 !rofi
 
 !alacritty
+
+!matplotlib

@@ -13,7 +13,6 @@ alias lgit='lazygit'
 
 # WIFI
 alias hotspot='nmcli device wifi > /dev/null; nmcli device wifi connect "Redmi Note 11T Pro" password 88888888'
-alias campus='nmcli device wifi > /dev/null; nmcli device wifi connect csust-lt'
 
 # OpenVPN
 alias vpnconnect='openvpn3 session-start --config $HOME/.config/zsh/vpn/rack.ovpn'
