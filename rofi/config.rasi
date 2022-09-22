@@ -1,7 +1,7 @@
 configuration {
   font: "mono 20";
   show-icons: true;
-  icon-theme: "Numix";
+  icon-theme: "Papirus";
   drun-match-fields: "name,generic,exec,categories,keywords";
   kb-cancel: "Escape,Control+g,Control+bracketleft,Super+space";
   timeout {

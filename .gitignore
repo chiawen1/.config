@@ -14,6 +14,7 @@ ranger/plugins/
 
 !zsh
 zsh/*.zwc
+loginData.json
 
 !tmux
 
