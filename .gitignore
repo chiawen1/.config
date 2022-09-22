@@ -14,7 +14,7 @@ ranger/plugins/
 
 !zsh
 zsh/*.zwc
-zsh/scripts/csust-network-login/loginData.json
+zsh/scripts/csust-network-login/
 
 !tmux
 
