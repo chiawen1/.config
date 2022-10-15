@@ -43,7 +43,7 @@ def yes_or_no(question, default="yes"):
         raise ValueError("invalid default answer: '%s'" % default)
 
     while True:
-        print(question + prompt)
+        print(question + prompt, end='')
         choice = input().lower()
         if default is not None and choice == '':
             return valid[default]

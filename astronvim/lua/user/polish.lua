@@ -1,11 +1,31 @@
-vim.cmd [[
- highlight LineNr guifg=grey
- highlight CursorLineNr guifg=white
- highlight Visual gui=bold guibg=#45475A
+return function()
+  if vim.fn.exists "$TMUX" == 1 then
+    local has_tmux, _ = pcall(require, "tmux")
+    if has_tmux then
+      require("tmux").setup {
+        copy_sync = {
+          enable = false,
+        },
+        navigation = {
+          cycle_navigation = true,
+          enable_default_keybindings = true,
+        },
+        resize = {
+          enable_default_keybindings = true,
+        },
+      }
+    end
+  end
 
- "highlight Comment guifg=#808080
- "highlight Normal guibg=#282828 guifg=#ebdbb2
- "highlight Pmenu guibg=#504945 guifg=#ebdbb2 
- "highlight PmenuSel gui=bold guibg=#83A598 guifg=#504945
-]]
-
+  -- FileType
+  vim.filetype.add {
+    extension = {
+      rasi = "rasi",
+      conf = "config",
+    },
+    filename = {
+      ["CmakeLists.txt"] = "cmake",
+      [".clang-format"] = "yaml",
+    },
+  }
+end
