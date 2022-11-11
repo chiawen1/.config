@@ -20,7 +20,7 @@ return function(config)
         group = "format_on_save",
         pattern = "<buffer>",
         callback = function()
-          vim.lsp.buf.formatting_sync { async = true }
+          vim.lsp.buf.format { async = true }
         end,
       })
     end

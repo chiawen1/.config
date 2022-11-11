@@ -1,9 +1,12 @@
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
+fi
 
-# fzf
-export FZF_DEFAULT_COMMAND='fd --hidden -E AppData -E .git'
-#export FZF_COMPLETION_TRIGGER='\'
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
 
 

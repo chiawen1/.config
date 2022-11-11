@@ -10,13 +10,13 @@ return {
       require("surround").setup { mappings_style = "surround", map_insert_mode = false }
     end,
   },
-  ["phaazon/hop.nvim"] = {
-    branch = "v1", -- optional but strongly recommended
-    event = "BufRead",
-    config = function()
-      require("hop").setup()
-    end,
-  },
+  -- ["phaazon/hop.nvim"] = {
+  --   branch = "v1", -- optional but strongly recommended
+  --   event = "BufRead",
+  --   config = function()
+  --     require("hop").setup()
+  --   end,
+  -- },
   ["ray-x/lsp_signature.nvim"] = {
     event = "InsertEnter",
     config = function()
@@ -69,17 +69,21 @@ return {
   ["jvgrootveld/telescope-zoxide"] = {
     module = "telescope._extensions.zoxide",
   },
-  [ "sainnhe/everforest" ] = {},
-  [ "sainnhe/gruvbox-material" ] = {},
-  [ "sainnhe/sonokai" ] = {},
-  [ "sainnhe/edge" ] = {},
-  [ 'dsznajder/vscode-es7-javascript-react-snippets'] = {
-   run = 'yarn install --frozen-lockfile && yarn compile'
+  ["sainnhe/everforest"] = {},
+  ["sainnhe/gruvbox-material"] = {},
+  ["sainnhe/sonokai"] = {},
+  ["sainnhe/edge"] = {},
+  ["dsznajder/vscode-es7-javascript-react-snippets"] = {
+    run = "yarn install --frozen-lockfile && yarn compile",
   },
   ["ethanholz/nvim-lastplace"] = {
     config = require "user.plugins.nvim-lastplace",
   },
-  [ "hkupty/iron.nvim" ] = {
+  ["hkupty/iron.nvim"] = {
     config = require "user.plugins.iron",
   },
+  -- ["tzachar/cmp-tabnine'"] = {
+  --   run = "./install.sh",
+  --   requires = 'hrsh7th/nvim-cmp',
+  -- },
 }

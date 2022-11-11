@@ -1,21 +1,16 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-# Path to your oh-my-zsh installation.
-export ZSH="/usr/share/oh-my-zsh"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-ZSH_THEME="robbyrussell"
 
-plugins=(git history-substring-search extract vi-mode pip)
+source $HOME/.config/zsh/antigen.zsh
+source $HOME/.config/zsh/env.zsh
+source $HOME/.config/zsh/rc.zsh
+source $HOME/.config/zsh/alias.zsh
+source $HOME/.config/zsh/command.zsh
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-source ~/.config/zsh/rc.zsh
-source ~/.config/zsh/command.zsh
-source ~/.config/zsh/alias.zsh
-source ~/.config/zsh/env.zsh
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
-eval $(thefuck --alias)
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

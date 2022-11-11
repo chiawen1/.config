@@ -14,7 +14,7 @@ setting(){
 }
 
 
-campus(){
+csust-connect(){
   # ping baidu.com -c 1 || nmcli device wifi > /dev/null || nmcli device wifi connect csust-lt
   python3 $HOME/.config/zsh/scripts/csust-network-login/log2network.py
 }

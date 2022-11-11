@@ -7,22 +7,23 @@
 !/README.md
 !/.gitignore
 
+!i3
+
 !astronvim
 
 !ranger
 ranger/plugins/
 
 !zsh
-zsh/scripts/
+zsh/antigen.zsh.zwc
 
 !tmux
 
 !kitty
-
-!linux_plug
 
 !rofi
 
 !alacritty
 
 !matplotlib
+
