@@ -5,11 +5,11 @@ return function(config)
   config.sources = {
     formatting.stylua,
     formatting.black,
-    formatting.prettierd.with {
-      env = {
-        PRETTIERD_DEFAULT_CONFIG = vim.fn.expand "~/.config/.prettierrc.json",
-      },
-    },
+    -- formatting.prettierd.with {
+    --   env = {
+    --     PRETTIERD_DEFAULT_CONFIG = vim.fn.expand "~/.config/.prettierrc.json",
+    --   },
+    -- },
     formatting.shfmt,
   }
   config.on_attach = function(client)

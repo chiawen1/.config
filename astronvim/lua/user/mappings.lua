@@ -14,6 +14,7 @@ end
 
 return {
   n = {
+    ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
     ["<leader>lF"] = {
       function()
         vim.api.nvim_del_augroup_by_name "format_on_save"
@@ -21,90 +22,82 @@ return {
       desc = "Disable Format on Save",
     },
     ["<leader><cr>"] = { '<esc>/<++><cr>"_c4l', desc = "Next Template" },
-    ["<leader>dr"] = {
-      function()
-        local word = vim.fn.expand "<cword>"
-        local rp = vim.fn.input "Replace with: "
-        vim.cmd("%s/" .. word .. "/" .. rp .. "/g")
-      end,
-    },
-    ["<A-g>"] = {
-      function()
-        local word = vim.fn.expand "<cword>"
-        vim.cmd(string.format("silent exec '!goldendict %s'", word))
-      end,
-      silent = true,
-      desc = "Goldendict",
-    },
-    ["<leader>q"] = { ":Bdelete!<cr>", desc = "Quit Buffer" },
-    ["<leader>w"] = { ":WinShift<cr>", desc = "WinShift" },
-    ["<leader>hl"] = { ":HopLineStart<cr>", desc = "Hop Line Start" },
-    ["<leader>hp"] = { ":HopPattern<cr>", desc = "Hop Pattern" },
-    ["<leader>hw"] = { ":HopWord<cr>", desc = "Hop Word" },
-    ["<leader>."] = { "<cmd>cd %:p:h<cr>", desc = "Set CWD" },
-    ["<leader>SD"] = { ":!rm -r /home/dat/.local/share/nvim/sessions/*<cr><cr>", desc = "Delete all sessions" },
-    ["<leader>gg"] = {
-      function()
-        require("toggleterm.terminal").Terminal:new({ cmd = "lazygit", direction = "float", hidden = true }):toggle()
-      end,
-      desc = "Lazygit",
-    },
-    ["<leader>dh"] = { ":nohlsearch<cr>", desc = "No highlight" },
-    ["<leader>ds"] = {
-      function()
-        vim_opt_toggle "spell"
-      end,
-      desc = "Spell",
-    },
-    ["<leader>dc"] = {
-      function()
-        vim_opt_toggle "cursorline"
-      end,
-      desc = "Cursorline",
-    },
-    ["<leader>dl"] = {
-      function()
-        vim_opt_toggle "cursorcolumn"
-      end,
-      desc = "Cursor Column",
-    },
-    ["<leader>dC"] = {
-      function()
-        vim_opt_toggle("conceallevel", 0, 2)
-      end,
-      desc = "Conceal",
-    },
-    ["<C-t>"] = {
-      function()
-        require("syntax-tree-surfer").select_current_node()
-      end,
-      desc = "Select current node",
-    },
-    ["<leader>sb"] = false,
-    ["<leader>st"] = {
-      function()
-        require("telescope.builtin").builtin()
-      end,
-      desc = "Telescope",
-    },
-    ["<A-k>"] = { "<cmd>m .-2<CR>", desc = "move line up" },
-    ["<A-j>"] = { "<cmd>m .+1<CR>", desc = "move line down" },
-    ["n"] = { "nzzzv" },
-    ["N"] = { "Nzzzv" },
-    ["J"] = { "mzJ`z" },
-    ["<C-w>x"] = { ":WinShift swap<cr>" },
-    ["f"] = { ":HopChar1CurrentLine<cr>", desc = "Hop 1 Char Current Line" },
-    ["F"] = { ":HopChar1<cr>", desc = "Hop 1 Char Whole Buf" },
-    ["<A-c>"] = { ":VCoolor<cr>", desc = "VCoolor" },
-    ["<b"] = false,
-    [">b"] = false,
-    ["<leader>h"] = false,
-    ["<leader>tp"] = false,
-    ["<leader>tl"] = false,
-    ["<leader>tu"] = false,
-    ["<leader>tt"] = false,
-    ["<leader>tn"] = false,
-    ["<leader>c"] = false,
+    -- ["<leader>dr"] = {
+    --   function()
+    --     local word = vim.fn.expand "<cword>"
+    --     local rp = vim.fn.input "Replace with: "
+    --     vim.cmd("%s/" .. word .. "/" .. rp .. "/g")
+    --   end,
+    -- },
+    -- ["<A-g>"] = {
+    --   function()
+    --     local word = vim.fn.expand "<cword>"
+    --     vim.cmd(string.format("silent exec '!goldendict %s'", word))
+    --   end,
+    --   silent = true,
+    --   desc = "Goldendict",
+    -- },
+    ["<leader>q"] = { ":Bdelete<cr>", desc = "Quit Buffer" },
+    -- ["<leader>w"] = { ":WinShift<cr>", desc = "WinShift" },
+    -- ["<leader>hl"] = { ":HopLineStart<cr>", desc = "Hop Line Start" },
+    -- ["<leader>hp"] = { ":HopPattern<cr>", desc = "Hop Pattern" },
+    -- ["<leader>hw"] = { ":HopWord<cr>", desc = "Hop Word" },
+    -- ["<leader>."] = { "<cmd>cd %:p:h<cr>", desc = "Set CWD" },
+    -- ["<leader>SD"] = { ":!rm -r /home/dat/.local/share/nvim/sessions/*<cr><cr>", desc = "Delete all sessions" },
+    -- ["<leader>dh"] = { ":nohlsearch<cr>", desc = "No highlight" },
+    -- ["<leader>ds"] = {
+    --   function()
+    --     vim_opt_toggle "spell"
+    --   end,
+    --   desc = "Spell",
+    -- },
+    -- ["<leader>dc"] = {
+    --   function()
+    --     vim_opt_toggle "cursorline"
+    --   end,
+    --   desc = "Cursorline",
+    -- },
+    -- ["<leader>dl"] = {
+    --   function()
+    --     vim_opt_toggle "cursorcolumn"
+    --   end,
+    --   desc = "Cursor Column",
+    -- },
+    -- ["<leader>dC"] = {
+    --   function()
+    --     vim_opt_toggle("conceallevel", 0, 2)
+    --   end,
+    --   desc = "Conceal",
+    -- },
+    -- ["<C-t>"] = {
+    --   function()
+    --     require("syntax-tree-surfer").select_current_node()
+    --   end,
+    --   desc = "Select current node",
+    -- },
+    -- ["<leader>sb"] = false,
+    -- ["<leader>st"] = {
+    --   function()
+    --     require("telescope.builtin").builtin()
+    --   end,
+    --   desc = "Telescope",
+    -- },
+    -- ["<A-k>"] = { "<cmd>m .-2<CR>", desc = "move line up" },
+    -- ["<A-j>"] = { "<cmd>m .+1<CR>", desc = "move line down" },
+    -- ["n"] = { "nzzzv" },
+    -- ["N"] = { "Nzzzv" },
+    -- ["J"] = { "mzJ`z" },
+    -- ["<C-w>x"] = { ":WinShift swap<cr>" },
+    -- ["<A-c>"] = { ":VCoolor<cr>", desc = "VCoolor" },
+    -- ["<b"] = false,
+    -- [">b"] = false,
+    -- ["<leader>h"] = false,
+    -- ["<leader>tp"] = false,
+    -- ["<leader>tl"] = false,
+    -- ["<leader>tu"] = false,
+    -- ["<leader>tt"] = false,
+    -- ["<leader>tn"] = false,
+    -- ["<leader>c"] = false,
     ["<leader>fh"] = false,
     ["<leader>u"] = false,
     ["<leader>o"] = false,
@@ -249,9 +242,8 @@ return {
   },
   i = {
     ["<C-S>"] = { "<Esc>:w<cr>i", desc = "Save the file" },
-    [","] = ",<c-g>u",
-    ["."] = ".<c-g>u",
-    ["!"] = "!<c-g>u",
-    ["?"] = "?<c-g>u",
+  },
+  t = {
+    ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
   },
 }

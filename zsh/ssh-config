@@ -1,7 +1,22 @@
+Host Frp-Client
+    HostName 106.52.242.128
+    Port 7022
+    User root
+
 Host Develop-Host
-    Hostname 175.178.220.100
+    HostName 175.178.220.100
     User root
 
 Host Proxy-Host
-    Hostname 157.245.58.106
+    HostName 164.92.84.95
+    User root
+    IdentityFile ~/.ssh/proxy-host
+
+Host Frp-Server
+    HostName 106.52.242.128
+    User root
+    IdentityFile ~/.ssh/frp-host
+
+Host 114.132.223.156
+    HostName 114.132.223.156
     User root

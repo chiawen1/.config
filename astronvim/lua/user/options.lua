@@ -1,6 +1,7 @@
 return {
   opt = {
     lazyredraw = false,
+    clipboard = "",
     relativenumber = false,
     autochdir = true,
     spell = false,
@@ -8,8 +9,9 @@ return {
     timeoutlen = 300,
     updatetime = 300,
     numberwidth = 1,
+    showtabline = 1,
     spellfile = vim.fn.has "win32" ~= 0 and "C:\\Users\\Lenovo\\AppData\\Local\\nvim\\lua\\user\\spell\\en.utf-8.add"
-      or "/home/chiawen/.config/astronvim/lua/user/spell/en.utf-8.add",
+        or "/home/chiawen/.config/astronvim/lua/user/spell/en.utf-8.add",
     list = true,
     listchars = {
       tab = "→ ",
