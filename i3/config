@@ -41,6 +41,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+Return exec alacritty
 
+
+bindsym mod1+Shift+s exec flameshot gui
+
 # kill focused window
 bindsym $mod+q kill
 
@@ -180,7 +183,6 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym control+mod1+o exec --no-startup-id ~/.config/i3/picom-toggle.sh
-bindsym mod1+Shift+s exec --no-startup-id flameshot gui
 
 exec --no-startup-id dex --autostart --environment i3
 # exec --no-startup-id autotiling
