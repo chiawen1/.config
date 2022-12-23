@@ -2,13 +2,16 @@
 
 cp -rf . $HOME/.config
 
-# frp config
-mkdir /etc/frp
-cp -rf $HOME/.config/frp/* /etc/frp/
-
 # zsh config
-rm ~/.zshrc
+rm -rf ~/.zshrc
 ln -s ~/.config/zsh/.zshrc ~/.zshrc
-rm ~/.ssh/config
-ln -s ~/.config/zsh/ssh-config ~/.ssh/config
 
+# ssh
+rm -rf ~/.ssh
+ln -s ~/.config/ssh ~/.ssh
+
+# ranger
+git clone https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/devicons2
+
+# Xresources
+ln -s ~/.config/.Xresources ~/.Xresources

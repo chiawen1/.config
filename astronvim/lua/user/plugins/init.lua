@@ -1,6 +1,6 @@
 return {
   ["goolord/alpha-nvim"] = { disable = true },
-  ["rebelot/heirline.nvim"] = { disable = true },
+  -- ["rebelot/heirline.nvim"] = { disable = true },
   ["max397574/better-escape.nvim"] = { disable = true },
   -- ["akinsho/bufferline.nvim"] = { disable = true },
 
@@ -14,9 +14,9 @@ return {
   ["dsznajder/vscode-es7-javascript-react-snippets"] = {
     run = "yarn install --frozen-lockfile && yarn compile",
   },
-  ["nvim-lualine/lualine.nvim"] = {
-    config = require "user.plugins.lualine",
-  },
+  -- ["nvim-lualine/lualine.nvim"] = {
+  --   config = require "user.plugins.lualine",
+  -- },
   ["ethanholz/nvim-lastplace"] = {
     config = require "user.plugins.nvim-lastplace",
   },

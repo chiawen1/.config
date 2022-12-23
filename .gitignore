@@ -18,6 +18,8 @@ ranger/plugins/
 !zsh
 zsh/antigen.zsh.zwc
 
+!ssh
+
 !tmux
 
 !kitty
@@ -29,3 +31,5 @@ zsh/antigen.zsh.zwc
 !matplotlib
 
 !frp
+
+!.Xresources

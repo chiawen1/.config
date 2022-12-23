@@ -15,6 +15,9 @@ alias lgit='lazygit'
 alias hotspot='nmcli device wifi > /dev/null; nmcli device wifi connect "Redmi Note 11T Pro" password 88888888'
 alias campus='nmcli device wifi > /dev/null; nmcli device wifi connect csust-lt'
 
+alias b5home='nmcli device wifi > /dev/null; nmcli device wifi connect @PHICOMM_68_5G password 13786474305'
+alias bhome='nmcli device wifi > /dev/null; nmcli device wifi connect @PHICOMM_68 password 13786474305'
+
 # OpenVPN
 alias ovpnconnect='openvpn3 session-start --config /etc/openvpn3/ovpn.ovpn'
 alias ovpndisconnect='openvpn3 session-manage --disconnect --config /etc/openvpn3/ovpn.ovpn'
