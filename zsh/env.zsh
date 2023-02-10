@@ -10,3 +10,6 @@ if [ -d "$HOME/.local/bin" ] ;
 fi
 
 
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export PATH=$PATH:$JAVA_HOME/bin
+

@@ -132,6 +132,8 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
+# Translate
+bindsym $mod+t exec --no-startup-id ~/.config/i3/scripts/transtify.sh
 # ArcoLinux Logout
 bindsym $mod+Shift+e exec --no-startup-id archlinux-logout
 bindsym $mod+X exec --no-startup-id archlinux-logout
@@ -216,13 +218,18 @@ bindsym $mod+s layout toggle split
 bindsym $mod+e layout toggle splith tabbed splitv
 
 # change focus between tiling / floating windows
-bindsym $mod+mod1+space focus mode_toggle
+bindsym $mod+Ctrl+space focus mode_toggle
 
 
 ################# resize  
 
 # Resizing by 1
-bindsym $mod+Mod1+Ctrl+Right resize shrink width 1 px or 1 ppt
+bindsym Shift+Ctrl+$right resize shrink width 1 px or 1 ppt
+bindsym Shift+Ctrl+$up resize grow height 1 px or 1 ppt
+bindsym Shift+Ctrl+$down resize shrink height 1 px or 1 ppt
+bindsym Shift+Ctrl+$left resize grow width 1 px or 1 ppt
+
+bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
 bindsym $mod+Mod1+Ctrl+Up resize grow height 1 px or 1 ppt
 bindsym $mod+Mod1+Ctrl+Down resize shrink height 1 px or 1 ppt
 bindsym $mod+Mod1+Ctrl+Left resize grow width 1 px or 1 ppt
@@ -266,16 +273,16 @@ font pango:Noto Mono Regular 13
 
 # Assign application to start on a specific workspace
 # you can find the class with the program xprop
-assign [class="kitty"] workspace 1
+# assign [class="kitty"] workspace 1
 assign [class="Alacritty|Code"] workspace 2
-assign [class="Microsoft-edge-dev|Microsoft-edge"] workspace 3
+assign [class="Vivaldi-stable|Microsoft-edge-dev|Microsoft-edge"] workspace 3
 assign [class="Google-chrome"] workspace 4
 assign [class="wps|wpp|et|Soffice"] workspace 5
-assign [class="Evince|okular|pdf"] workspace 6
+assign [class="sioyek|Evince|okular|pdf"] workspace 6
 assign [class="Inkscape"] workspace 7
-assign [class="weixin|icalingua|Feishu"] workspace 8
-assign [class="airdroid-nativefier-eabede"] workspace 9
-for_window [class="wemeetapp"] move to workspace workspace 9
+assign [class="weixin|QQ|Feishu"] workspace 8
+assign [class="qqmusic|airdroid-nativefier-eabede"] workspace 9
+for_window [class="wemeetapp"] move to workspace 9
 
 # Example - make browser start on workspace 3
 # assign [class="Firefox|Vivaldi-stable|Vivaldi-snapshot|Opera"]                      → 3
@@ -633,7 +640,7 @@ bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
 
 # changing border style
 # super+t in arcolinux is starting terminal
-bindsym $mod+t border normal
+bindsym $mod+Shift+t border normal
 bindsym $mod+y border pixel 1
 bindsym $mod+u border none
 

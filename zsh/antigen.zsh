@@ -13,8 +13,8 @@ antigen bundle sunlei/zsh-ssh
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Load the theme.
-# antigen theme robbyrussell
-antigen theme romkatv/powerlevel10k
+antigen theme robbyrussell
+# antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
 antigen apply

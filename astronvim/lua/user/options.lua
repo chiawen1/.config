@@ -1,9 +1,9 @@
 return {
   opt = {
     lazyredraw = false,
-    clipboard = "",
+    -- clipboard = "",
     relativenumber = false,
-    autochdir = true,
+    autochdir = false,
     spell = false,
     spelllang = "en,programming",
     timeoutlen = 300,

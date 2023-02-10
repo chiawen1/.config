@@ -15,234 +15,159 @@ end
 return {
   n = {
     ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
-    ["<leader>lF"] = {
-      function()
-        vim.api.nvim_del_augroup_by_name "format_on_save"
-      end,
-      desc = "Disable Format on Save",
-    },
-    ["<leader><cr>"] = { '<esc>/<++><cr>"_c4l', desc = "Next Template" },
-    -- ["<leader>dr"] = {
+    -- ["<leader>lF"] = {
     --   function()
-    --     local word = vim.fn.expand "<cword>"
-    --     local rp = vim.fn.input "Replace with: "
-    --     vim.cmd("%s/" .. word .. "/" .. rp .. "/g")
+    --     vim.api.nvim_del_augroup_by_name "format_on_save"
     --   end,
+    --   desc = "Disable Format on Save",
     -- },
-    -- ["<A-g>"] = {
+    -- ["<leader><cr>"] = { '<esc>/<++><cr>"_c4l', desc = "Next Template" },
+    -- ["<leader>q"] = { ":Bdelete<cr>", desc = "Quit Buffer" },
+    -- ["<leader>fh"] = false,
+    -- ["<leader>u"] = false,
+    -- ["<leader>o"] = false,
+    -- ["<F9>"] = {
     --   function()
-    --     local word = vim.fn.expand "<cword>"
-    --     vim.cmd(string.format("silent exec '!goldendict %s'", word))
+    --     require("dap").toggle_breakpoint()
     --   end,
-    --   silent = true,
-    --   desc = "Goldendict",
+    --   desc = "Toggle Breakpoint",
     -- },
-    ["<leader>q"] = { ":Bdelete<cr>", desc = "Quit Buffer" },
-    -- ["<leader>w"] = { ":WinShift<cr>", desc = "WinShift" },
-    -- ["<leader>hl"] = { ":HopLineStart<cr>", desc = "Hop Line Start" },
-    -- ["<leader>hp"] = { ":HopPattern<cr>", desc = "Hop Pattern" },
-    -- ["<leader>hw"] = { ":HopWord<cr>", desc = "Hop Word" },
-    -- ["<leader>."] = { "<cmd>cd %:p:h<cr>", desc = "Set CWD" },
-    -- ["<leader>SD"] = { ":!rm -r /home/dat/.local/share/nvim/sessions/*<cr><cr>", desc = "Delete all sessions" },
-    -- ["<leader>dh"] = { ":nohlsearch<cr>", desc = "No highlight" },
-    -- ["<leader>ds"] = {
+    -- ["<leader>xb"] = {
     --   function()
-    --     vim_opt_toggle "spell"
+    --     require("dap").set_breakpoint(vim.fn.input "Breakpoints condition: ")
     --   end,
-    --   desc = "Spell",
+    --   desc = "Breakpoint with condition",
     -- },
-    -- ["<leader>dc"] = {
+    -- ["<leader>xc"] = {
     --   function()
-    --     vim_opt_toggle "cursorline"
+    --     require("dap").clear_breakpoints()
     --   end,
-    --   desc = "Cursorline",
+    --   desc = "Clear Breakpoints",
     -- },
-    -- ["<leader>dl"] = {
+    -- ["<F10>"] = {
     --   function()
-    --     vim_opt_toggle "cursorcolumn"
+    --     require("dap").continue()
     --   end,
-    --   desc = "Cursor Column",
+    --   desc = "Continue",
     -- },
-    -- ["<leader>dC"] = {
+    -- ["<F11>"] = {
     --   function()
-    --     vim_opt_toggle("conceallevel", 0, 2)
+    --     require("dap").step_into()
     --   end,
-    --   desc = "Conceal",
+    --   desc = "Step Into",
     -- },
-    -- ["<C-t>"] = {
+    -- ["<F12>"] = {
     --   function()
-    --     require("syntax-tree-surfer").select_current_node()
+    --     require("dap").step_over()
     --   end,
-    --   desc = "Select current node",
+    --   desc = "Step Over",
     -- },
-    -- ["<leader>sb"] = false,
-    -- ["<leader>st"] = {
+    -- ["<leader>xq"] = {
     --   function()
-    --     require("telescope.builtin").builtin()
+    --     require("dap").close()
+    --     require("dapui").close()
     --   end,
-    --   desc = "Telescope",
+    --   desc = "Close Session",
     -- },
-    -- ["<A-k>"] = { "<cmd>m .-2<CR>", desc = "move line up" },
-    -- ["<A-j>"] = { "<cmd>m .+1<CR>", desc = "move line down" },
-    -- ["n"] = { "nzzzv" },
-    -- ["N"] = { "Nzzzv" },
-    -- ["J"] = { "mzJ`z" },
-    -- ["<C-w>x"] = { ":WinShift swap<cr>" },
-    -- ["<A-c>"] = { ":VCoolor<cr>", desc = "VCoolor" },
-    -- ["<b"] = false,
-    -- [">b"] = false,
-    -- ["<leader>h"] = false,
-    -- ["<leader>tp"] = false,
-    -- ["<leader>tl"] = false,
-    -- ["<leader>tu"] = false,
-    -- ["<leader>tt"] = false,
-    -- ["<leader>tn"] = false,
-    -- ["<leader>c"] = false,
-    ["<leader>fh"] = false,
-    ["<leader>u"] = false,
-    ["<leader>o"] = false,
-    ["<F9>"] = {
-      function()
-        require("dap").toggle_breakpoint()
-      end,
-      desc = "Toggle Breakpoint",
-    },
-    ["<leader>xb"] = {
-      function()
-        require("dap").set_breakpoint(vim.fn.input "Breakpoints condition: ")
-      end,
-      desc = "Breakpoint with condition",
-    },
-    ["<leader>xc"] = {
-      function()
-        require("dap").clear_breakpoints()
-      end,
-      desc = "Clear Breakpoints",
-    },
-    ["<F10>"] = {
-      function()
-        require("dap").continue()
-      end,
-      desc = "Continue",
-    },
-    ["<F11>"] = {
-      function()
-        require("dap").step_into()
-      end,
-      desc = "Step Into",
-    },
-    ["<F12>"] = {
-      function()
-        require("dap").step_over()
-      end,
-      desc = "Step Over",
-    },
-    ["<leader>xq"] = {
-      function()
-        require("dap").close()
-        require("dapui").close()
-      end,
-      desc = "Close Session",
-    },
-    ["<leader>xQ"] = {
-      function()
-        require("dap").terminate()
-        require("dapui").close()
-      end,
-      desc = "Terminate",
-    },
-    ["<leader>xu"] = {
-      function()
-        require("dapui").toggle()
-      end,
-      desc = "Toggle Debugger UI",
-    },
-    ["<leader>fdc"] = {
-      function()
-        require("telescope").extensions.dap.commands {}
-      end,
-      desc = "Commands",
-    },
-    ["<leader>fdC"] = {
-      function()
-        require("telescope").extensions.dap.configurations {}
-      end,
-      desc = "Configurations",
-    },
-    ["<leader>fdb"] = {
-      function()
-        require("telescope").extensions.dap.list_breakpoints {}
-      end,
-      desc = "Breakpoints",
-    },
-    ["<leader>fdv"] = {
-      function()
-        require("telescope").extensions.dap.variables {}
-      end,
-      desc = "Variables",
-    },
-    ["<leader>fdf"] = {
-      function()
-        require("telescope").extensions.dap.frames {}
-      end,
-      desc = "Frames",
-    },
-    ["<leader>fz"] = {
-      function()
-        require("telescope").extensions.zoxide.list {}
-      end,
-      desc = "Zoxide",
-    },
-    ["<leader>pp"] = {
-      function()
-        require("telescope").extensions.packer.packer()
-      end,
-      desc = "Packer Search",
-    },
+    -- ["<leader>xQ"] = {
+    --   function()
+    --     require("dap").terminate()
+    --     require("dapui").close()
+    --   end,
+    --   desc = "Terminate",
+    -- },
+    -- ["<leader>xu"] = {
+    --   function()
+    --     require("dapui").toggle()
+    --   end,
+    --   desc = "Toggle Debugger UI",
+    -- },
+    -- ["<leader>fdc"] = {
+    --   function()
+    --     require("telescope").extensions.dap.commands {}
+    --   end,
+    --   desc = "Commands",
+    -- },
+    -- ["<leader>fdC"] = {
+    --   function()
+    --     require("telescope").extensions.dap.configurations {}
+    --   end,
+    --   desc = "Configurations",
+    -- },
+    -- ["<leader>fdb"] = {
+    --   function()
+    --     require("telescope").extensions.dap.list_breakpoints {}
+    --   end,
+    --   desc = "Breakpoints",
+    -- },
+    -- ["<leader>fdv"] = {
+    --   function()
+    --     require("telescope").extensions.dap.variables {}
+    --   end,
+    --   desc = "Variables",
+    -- },
+    -- ["<leader>fdf"] = {
+    --   function()
+    --     require("telescope").extensions.dap.frames {}
+    --   end,
+    --   desc = "Frames",
+    -- },
+    -- ["<leader>fz"] = {
+    --   function()
+    --     require("telescope").extensions.zoxide.list {}
+    --   end,
+    --   desc = "Zoxide",
+    -- },
+    -- ["<leader>pp"] = {
+    --   function()
+    --     require("telescope").extensions.packer.packer()
+    --   end,
+    --   desc = "Packer Search",
+    -- },
   },
-  v = {
-    ["<A-j>"] = { ":m '>+1<cr>gv=gv" },
-    ["<A-k>"] = { ":m '<-2<cr>gv=gv" },
-    J = {
-      function()
-        require("syntax-tree-surfer").surf("next", "visual")
-      end,
-      desc = "Next",
-    },
-    K = {
-      function()
-        require("syntax-tree-surfer").surf("prev", "visual")
-      end,
-      desc = "Prev",
-    },
-    H = {
-      function()
-        require("syntax-tree-surfer").surf("parent", "visual")
-      end,
-      desc = "Parent",
-    },
-    L = {
-      function()
-        require("syntax-tree-surfer").surf("child", "visual")
-      end,
-      desc = "Child",
-    },
-    ["<C-j>"] = {
-      function()
-        require("syntax-tree-surfer").surf("next", "visual", true)
-      end,
-      desc = "Swap Next",
-    },
-    ["<C-k>"] = {
-      function()
-        require("syntax-tree-surfer").surf("prev", "visual", true)
-      end,
-      desc = "Swap Prev",
-    },
-  },
-  i = {
-    ["<C-S>"] = { "<Esc>:w<cr>i", desc = "Save the file" },
-  },
+  -- v = {
+  --   ["<A-j>"] = { ":m '>+1<cr>gv=gv" },
+  --   ["<A-k>"] = { ":m '<-2<cr>gv=gv" },
+  --   J = {
+  --     function()
+  --       require("syntax-tree-surfer").surf("next", "visual")
+  --     end,
+  --     desc = "Next",
+  --   },
+  --   K = {
+  --     function()
+  --       require("syntax-tree-surfer").surf("prev", "visual")
+  --     end,
+  --     desc = "Prev",
+  --   },
+  --   H = {
+  --     function()
+  --       require("syntax-tree-surfer").surf("parent", "visual")
+  --     end,
+  --     desc = "Parent",
+  --   },
+  --   L = {
+  --     function()
+  --       require("syntax-tree-surfer").surf("child", "visual")
+  --     end,
+  --     desc = "Child",
+  --   },
+  --   ["<C-j>"] = {
+  --     function()
+  --       require("syntax-tree-surfer").surf("next", "visual", true)
+  --     end,
+  --     desc = "Swap Next",
+  --   },
+  --   ["<C-k>"] = {
+  --     function()
+  --       require("syntax-tree-surfer").surf("prev", "visual", true)
+  --     end,
+  --     desc = "Swap Prev",
+  --   },
+  -- },
+  -- i = {
+  --   ["<C-S>"] = { "<Esc>:w<cr>i", desc = "Save the file" },
+  -- },
   t = {
     ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
   },

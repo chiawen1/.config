@@ -10,9 +10,9 @@ return function(client, bufnr)
   end, { buffer = bufnr, desc = "Toggle diagnostics" })
 
   if client.name == "tsserver" or client.name == "jsonls" or client.name == "html" or client.name == "sumneko_lua" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.document_formatting then
     vim.api.nvim_create_augroup("format_on_save", { clear = true })
     vim.api.nvim_create_autocmd("BufWritePre", {
       desc = "Auto format before save",
