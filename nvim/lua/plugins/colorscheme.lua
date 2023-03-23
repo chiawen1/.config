@@ -8,39 +8,46 @@ local function set_theme(theme)
   hightlight(0, "Comment", { fg = "#7faa90" })
   -- hightlight(0, "Normal", { bg = "none" })
   -- hightlight(0, "NormalFloat", { bg = "none" })
-  -- hightlight(0, "Visual", { bg = "#45475a" })
+  hightlight(0, "Visual", { bg = "#555577" })
+  hightlight(0, "MatchParen", { bg = "green" })
   -- hightlight(0, "StatusLine", { bg = "#ff6077", fg = "#000000" })
   -- hightlight(0, "Pmenu", { bg = "#504945", fg = "#ebdbb2" })
   -- hightlight(0, "PmenuSel", { bg = "#83a598", fg = "#504945" })
 end
 
 return {
-  { "EdenEast/nightfox.nvim", lazy = true },
-  { "navarasu/onedark.nvim", lazy = true },
-  { "sainnhe/everforest", lazy = true },
-  { "sainnhe/gruvbox-material", lazy = true },
-  { "sainnhe/sonokai", lazy = true },
-  { "sainnhe/edge", lazy = true },
-  { "folke/tokyonight.nvim", lazy = true },
-  { "projekt0n/github-nvim-theme", lazy = true, priority = 1000 },
+
+  { "EdenEast/nightfox.nvim" },
+  { "navarasu/onedark.nvim" },
+  { "sainnhe/everforest" },
+  { "sainnhe/gruvbox-material" },
+  {
+    "sainnhe/sonokai",
+    config = function()
+      set_theme("sonokai")
+    end,
+  },
+  { "sainnhe/edge" },
+  { "folke/tokyonight.nvim" },
+  {
+    "projekt0n/github-nvim-theme",
+    -- config = function()
+    --   set_theme("github_dark")
+    -- end,
+  },
 
   -- tokyonight
   {
     "folke/tokyonight.nvim",
-    lazy = true,
     opts = { style = "moon" },
+    -- config = function()
+    --   set_theme("tokyonight")
+    -- end,
   },
 
   -- catppuccin
   {
     "catppuccin/nvim",
-    lazy = true,
     name = "catppuccin",
-  },
-  {
-    "LazyVim/LazyVim",
-    config = function()
-      set_theme("github_dark")
-    end,
   },
 }

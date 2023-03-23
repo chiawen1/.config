@@ -1,5 +1,6 @@
 export EDITOR='nvim'
 export VISUAL='nvim'
+export BROWSER='microsoft-edge-stable'
 
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"

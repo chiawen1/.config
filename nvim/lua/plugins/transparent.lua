@@ -1,7 +1,7 @@
 return {
   {
     "xiyaowong/nvim-transparent",
-    enabled = false,
+    -- enabled = false,
     config = function()
       require("transparent").setup({
         enable = true, -- boolean: enable transparent

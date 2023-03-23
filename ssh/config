@@ -3,15 +3,40 @@ Host Tecent-Frp
     Port 7022
     User root
 
-Host Tecent-Cload
+Host tecent
     HostName 106.52.242.128
     User root
     IdentityFile ~/.ssh/tecent
 
-Host Oregen
-    HostName 44.234.71.219
-    User ubuntu
+Host vultr
+    HostName 149.28.158.102
+    User root
+    IdentityFile ~/.ssh/vultr
+
+Host oregen
+    HostName 35.86.223.135
+    User root
     IdentityFile ~/.ssh/Oregen.pem
+
+Host oregen2
+    HostName 35.83.254.121
+    User root
+    IdentityFile ~/.ssh/Oregen.pem
+
+Host singapore
+    HostName 54.169.109.106
+    User ubuntu
+    IdentityFile ~/.ssh/Singapore.pem
+
+Host frankfurt
+    HostName 3.75.130.60
+    User ubuntu
+    IdentityFile ~/.ssh/frankfurt.pem
+
+Host digitalocean
+    HostName 128.199.82.51
+    User root
+    IdentityFile ~/.ssh/digitalocean
 
 Host Develop-Host-Tang
     HostName 175.178.220.100

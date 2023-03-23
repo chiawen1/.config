@@ -22,11 +22,6 @@ if [ -f "$HOME/.Xresources" ]; then
 fi
 ln -s ~/.config/.Xresources ~/.Xresources
 
-# neovim
-if [ -d "$HOME/.config/nvim" ]; then
-	rm -rf $HOME/.config/nvim
-fi
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 # vpn
 sudo cp ./vpn/wg.conf /etc/wireguard/

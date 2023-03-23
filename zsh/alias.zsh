@@ -21,11 +21,30 @@ alias b2home='nmcli device wifi > /dev/null; nmcli device wifi connect TP-LINK_4
 alias dhome='nmcli device wifi > /dev/null; nmcli device wifi connect ChinaNet-L7CL password 3hgaamyr'
 alias fhome='nmcli device wifi > /dev/null;  nmcli device wifi connect TP-LINK_01A2 password hnhyxiao19900206'
 
-# OpenVPN
-alias ovpnconnect='openvpn3 session-start --config /etc/openvpn3/ovpn.ovpn'
-alias ovpndisconnect='openvpn3 session-manage --disconnect --config /etc/openvpn3/ovpn.ovpn'
-alias ovpnrestart='openvpn3 session-manage --restart --config /etc/openvpn3/ovpn.ovpn'
-alias ovpnlist='openvpn3 sessions-list'
+# wireguard
+alias wgconnect='sudo wg-quick up wg'
+alias wgdisconnect='sudo wg-quick down wg'
+alias wgstatus='sudo wg show'
+
+
+# OpenVPN3
+alias vpnconnect='sudo openvpn3 session-start --config /etc/openvpn/client.ovpn'
+alias vpnstatus='sudo openvpn3 session-list'
+alias vpndisconnect='sudo openvpn3 session-manage --session-id $(sudo openvpn3 session-list | grep -v "Session Name" | awk '{print $1}') --disconnect'
+
+# networkmanager openvpn 
+alias nmimport='sudo nmcli connection import type openvpn file /etc/openvpn/client.ovpn'
+alias nmdelete='sudo nmcli connection delete id "client"'
+alias nmconnect='sudo nmcli connection up id "client"'
+alias nmdisconnect='sudo nmcli connection down id "client"'
+alias nmstatus='sudo nmcli connection show --active'
+alias nmlist='sudo nmcli connection show'
+
+# openvpn 
+alias ovpnconnect='sudo openvpn --config /etc/openvpn/client.ovpn'
+alias ovpnstatus='sudo openvpn --status 10'
+alias ovpndisconnect='sudo killall openvpn'
+alias ovpnlist='sudo openvpn --show-adapters'
 
 
 # Docker
